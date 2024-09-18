@@ -109,7 +109,7 @@ class Game:
         # TODO: Vérifiez si la touche pressée est la flèche vers le haut
         if event.key == pygame.K_UP:
             # TODO: Vérifiez si Pac-Man peut se déplacer vers le haut sans entrer en collision
-            if self.check_collision((0,1))
+            if self.check_collision((0,1)):
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le haut
                 self.pacman.set_direction((0,1))
         # TODO: Vérifiez si la touche pressée est la flèche vers le bas
