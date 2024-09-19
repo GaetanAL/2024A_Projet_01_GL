@@ -49,7 +49,10 @@ def create_special_coins(board):
     special_coins = []
 
     # TODO: Ajouter des coins aux positions spéciales, en utilisant la variable 'special_coins_pos'.
-    special_coins = special_coins_pos
+    for indexX, x in enumerate(board):
+            for indexY, y in enumerate(x):
+                if (indexX,indexY) in special_coins_pos:
+                    special_coins.append((indexX,indexY))                
     
     
     return special_coins
