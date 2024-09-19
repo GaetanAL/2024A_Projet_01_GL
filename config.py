@@ -25,10 +25,10 @@ GHOST_SIZE = (45, 45)
 PACMAN_SIZE = (40, 40)
 
 # position de depart
-RESET_POS1 = [600, 350]
+RESET_POS1 = [600, 300]
 RESET_POS2 = [400, 350]
 RESET_POS3 = [150, 350]
-RESET_POS4 = [400, 400]
+RESET_POS4 = [500, 400]
 
 # Pacman start position
 PACMAN_START_POS = (7, 9)
