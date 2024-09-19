@@ -42,7 +42,7 @@ class Ghost:
             
             # TODO Vérifier si la prochaine position entre en collision avec un mur
             # Utilisez `self.check_collision()` pour détecter si le fantôme va heurter un mur.
-            if self.check_collision(next_rect) == False:       
+            if not self.check_collision(next_rect):       
                 # TODO: Si aucune collision n'est détectée, mettre à jour la position du fantôme
                 self.pos = (next_x,next_y)
                 self.rect = next_rect
@@ -98,7 +98,7 @@ class Ghost:
     def stop(self):
         self.direction = Direction.STOP
 
-    def reset(self):
+    def  reset(self):
         self.pos = random.choice(RANDOM_POS)
         self.dead = False
         self.direction = random.choice([Direction.LEFT, Direction.RIGHT, Direction.UP, Direction.DOWN])
