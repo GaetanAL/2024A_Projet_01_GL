@@ -47,7 +47,7 @@ class Ghost:
                 self.pos = (next_x,next_y)
                 # TODO: Changer la direction du fantôme s'il rencontre un mur
             else :
-                self.direction = self.change_direction()
+                self.change_direction()
         # Gérer le cas où le fantôme est "mort" avec un timer pour sa résurrection
         elif self.death_timer > 0:
             self.death_timer -= 1
@@ -90,8 +90,8 @@ class Ghost:
             # TODO: Vérifier si cette direction entraîne une collision avec un mur en utilisant `self.check_collision()`
             if not self.check_collision(next_rect):
                 # TODO: Si aucune collision n'est détectée, définir cette direction comme la nouvelle direction du fantôme avec `self.set_direction()` et sortir de la boucle
-                # self.set_direction(i)
-                return i # Sortir de la méthode une fois la direction changée
+                self.set_direction(i)
+                return  # Sortir de la méthode une fois la direction changée
 
     def stop(self):
         self.direction = Direction.STOP
