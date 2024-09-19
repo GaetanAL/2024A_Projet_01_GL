@@ -97,25 +97,25 @@ class Game:
         # TODO: Vérifiez si la touche pressée est la flèche droite avec event.key == pygame.K_RIGHT
         if event.key == pygame.K_RIGHT:
             # TODO: Vérifiez si Pac-Man peut se déplacer à droite sans entrer en collision avec self.check_collision((1, 0))
-            if not self.check_collision((1,0)):
+            if self.check_collision((1,0)):
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers la droite avec self.pacman.set_direction((1, 0))
                 self.pacman.set_direction((1,0))
         # TODO: Vérifiez si la touche pressée est la flèche gauche
         if event.key == pygame.K_LEFT:
             # TODO: Vérifiez si Pac-Man peut se déplacer à gauche sans entrer en collision
-            if not self.check_collision((-1,0)):
+            if self.check_collision((-1,0)):
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers la gauche
                 self.pacman.set_direction((-1,0))
         # TODO: Vérifiez si la touche pressée est la flèche vers le haut
         if event.key == pygame.K_UP:
             # TODO: Vérifiez si Pac-Man peut se déplacer vers le haut sans entrer en collision
-            if not self.check_collision((0,1)):
+            if self.check_collision((0,-1)):
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le haut
                 self.pacman.set_direction((0,-1))
         # TODO: Vérifiez si la touche pressée est la flèche vers le bas
         if event.key == pygame.K_DOWN:
             # TODO: Vérifiez si Pac-Man peut se déplacer vers le bas sans entrer en collision
-            if not self.check_collision((0,-1)):
+            if self.check_collision((0,1)):
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le bas
                 self.pacman.set_direction((0,1))
                 
@@ -130,7 +130,7 @@ class Game:
         new_y = self.pacman.y + dy
         # TODO: Vérifier si la nouvelle position est un chemin valide ou un mur
         # Utiliser la grille (`self.board`) pour déterminer si la case est un chemin (0) ou un mur (1). return True si c'est un chemin, False si c'est un mur.
-        if self.board[new_x][new_y] == 1:
+        if self.board[new_y][new_x] == 0:
             return True
         else:
             return False
