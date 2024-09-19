@@ -222,6 +222,7 @@ class Game:
                     self.blue_ghost_instance.reset()
                     self.orange_ghost_instance.reset()
                     self.pink_ghost_instance.reset()
+                    break
 
 if __name__ == "__main__":
     pygame.init()
