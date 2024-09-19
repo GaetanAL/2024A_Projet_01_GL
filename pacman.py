@@ -61,6 +61,7 @@ class PacMan:
                 new_pos = grid_to_screen(grid_pos=[self.x, self.y], tile_size=[self.size_grid, self.size_grid])
                 # TODO: Mettre à jour la position du rectangle de Pac-Man dans l'interface
                 self.pos = new_pos
+                self.rect = pygame.Rect(self.pos, PACMAN_SIZE)
                 # Mettre à jour `self.rect.topleft` avec la nouvelle position à l'écran pour déplacer l'affichage de Pac-Man.
                 self.rect.topleft
                 

@@ -45,6 +45,7 @@ class Ghost:
             if self.check_collision(next_rect) == False:       
                 # TODO: Si aucune collision n'est détectée, mettre à jour la position du fantôme
                 self.pos = (next_x,next_y)
+                self.rect = next_rect
                 # TODO: Changer la direction du fantôme s'il rencontre un mur
             else :
                 self.change_direction()
@@ -91,6 +92,7 @@ class Ghost:
             if not self.check_collision(next_rect):
                 # TODO: Si aucune collision n'est détectée, définir cette direction comme la nouvelle direction du fantôme avec `self.set_direction()` et sortir de la boucle
                 self.set_direction(i)
+                self.rect = next_rect
                 return  # Sortir de la méthode une fois la direction changée
 
     def stop(self):
